@@ -1,0 +1,153 @@
+/* ----------------------------------------------------------
+   FLEXGEN ZINGTREE THEME — Option A (Watermark on 1st Node Only)
+   Sleek Gradient | FlexGen Branding | Glass Panels | Modern UI
+----------------------------------------------------------- */
+
+/* ---------- ROOT COLORS : FLEXGEN BRAND ---------- */
+:root {
+    --flexgen-blue: #0E6FFF;
+    --flexgen-green: #9CD400;
+    --flexgen-dark: #000000;
+    --flexgen-navy: #013055;
+    --flexgen-text-light: #F5F7FA;
+    --flexgen-card-bg: rgba(255, 255, 255, 0.06);
+    --flexgen-border: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------- GLOBAL BACKGROUND (ALL PAGES) ---------- */
+body {
+    font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: linear-gradient(165deg, var(--flexgen-dark), var(--flexgen-navy));
+    color: var(--flexgen-text-light);
+}
+
+/* ---------- FIRST NODE ONLY — WATERMARK BACKGROUND ---------- */
+.node-first, .zingtree-node:first-of-type {
+    background:
+        url('https://www.flexgen.com/wp-content/uploads/2021/03/flexgen-x-icon.png') center/50% no-repeat,
+        linear-gradient(165deg, var(--flexgen-dark), var(--flexgen-navy));
+    opacity: 0.94;
+}
+
+.node-first .zt-content,
+.zingtree-node:first-of-type .zt-content {
+    backdrop-filter: blur(3px);
+}
+
+/* ---------- CARD / CONTENT BOX STYLING ---------- */
+.zt-content,
+.zt-text,
+.zingtree-panel,
+.panel-body {
+    background: var(--flexgen-card-bg) !important;
+    border: 1px solid var(--flexgen-border) !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- HEADINGS ---------- */
+h1, h2, h3 {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.3px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+h1 {
+    font-size: 1.9rem;
+}
+h2 {
+    font-size: 1.45rem;
+}
+h3 {
+    font-size: 1.2rem;
+}
+
+/* ---------- BUTTONS ---------- */
+button,
+a.btn,
+.zt-button {
+    background: var(--flexgen-blue) !important;
+    color: white !important;
+    border-radius: 10px !important;
+    border: none !important;
+    padding: 10px 18px !important;
+    font-weight: 600 !important;
+    transition: all 0.19s ease-in-out;
+    box-shadow: 0 0 12px rgba(14, 111, 255, 0.35);
+}
+
+button:hover,
+a.btn:hover,
+.zt-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 18px rgba(14, 111, 255, 0.55);
+}
+
+button:active,
+a.btn:active,
+.zt-button:active {
+    transform: scale(0.97);
+}
+
+/* ---------- LINKS ---------- */
+a {
+    color: var(--flexgen-blue);
+    text-decoration: underline;
+}
+a:hover {
+    color: var(--flexgen-green);
+}
+
+/* ---------- TABLES ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse !important;
+    margin-bottom: 18px;
+}
+
+table th {
+    background: rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
+    padding: 10px;
+    font-weight: 600;
+}
+
+table td {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 10px;
+    border-bottom: 1px solid var(--flexgen-border);
+}
+
+/* ---------- FORM FIELDS ---------- */
+input, textarea, select {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    border: 1px solid var(--flexgen-border) !important;
+    padding: 8px !important;
+}
+
+/* ---------- NODE TITLES ---------- */
+.zt-title {
+    font-size: 1.65rem !important;
+    font-weight: 700 !important;
+    color: white !important;
+    border-bottom: 1px solid var(--flexgen-border) !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 18px !important;
+}
+
+/* ---------- SCROLLBAR (DARK MODE) ---------- */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--flexgen-blue);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
