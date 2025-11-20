@@ -152,3 +152,7 @@ input, textarea, select {
 ::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.04);
 }
+
+html, body, .zingtree-body, .zingtree-main, .zt-main {
+    background: linear-gradient(165deg, #000000, #001525) !important;
+}
