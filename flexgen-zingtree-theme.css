@@ -1,69 +1,70 @@
 /* ----------------------------------------------------------
-   FLEXGEN ZINGTREE THEME — Option A (Watermark on 1st Node Only)
-   Sleek Gradient | FlexGen Branding | Glass Panels | Modern UI
+   FLEXGEN ZINGTREE THEME — Gradient Dark Mode (Option B)
+   Dark SaaS aesthetic | FlexGen branding | Glass UI
+   Watermark only on first node
 ----------------------------------------------------------- */
 
-/* ---------- ROOT COLORS : FLEXGEN BRAND ---------- */
+/* ---------- ROOT VARIABLES (FLEXGEN BRAND) ---------- */
 :root {
     --flexgen-blue: #0E6FFF;
     --flexgen-green: #9CD400;
-    --flexgen-dark: #000000;
-    --flexgen-navy: #013055;
-    --flexgen-text-light: #F5F7FA;
-    --flexgen-card-bg: rgba(255, 255, 255, 0.06);
+    --flexgen-black: #000000;
+    --flexgen-navy: #021C35;
+    --flexgen-deep-navy: #001525;
+    --flexgen-text-light: #F4F7FA;
+    --flexgen-text-muted: #D0D7E0;
     --flexgen-border: rgba(255, 255, 255, 0.12);
+    --flexgen-card-bg: rgba(255, 255, 255, 0.05);
+    --flexgen-card-bg-heavy: rgba(255, 255, 255, 0.08);
 }
 
-/* ---------- GLOBAL BACKGROUND (ALL PAGES) ---------- */
+/* ---------- GLOBAL BACKGROUND / TYPOGRAPHY ---------- */
 body {
+    background: linear-gradient(165deg, var(--flexgen-black), var(--flexgen-deep-navy));
     font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
-    background: linear-gradient(165deg, var(--flexgen-dark), var(--flexgen-navy));
     color: var(--flexgen-text-light);
+    margin: 0;
 }
 
-/* ---------- FIRST NODE ONLY — WATERMARK BACKGROUND ---------- */
-.node-first, .zingtree-node:first-of-type {
+/* ---------- WATERMARK ON FIRST NODE ONLY ---------- */
+.zingtree-node:first-of-type,
+.node-first {
     background:
-        url('https://www.flexgen.com/wp-content/uploads/2021/03/flexgen-x-icon.png') center/50% no-repeat,
-        linear-gradient(165deg, var(--flexgen-dark), var(--flexgen-navy));
-    opacity: 0.94;
+        url('https://www.flexgen.com/wp-content/uploads/2021/03/flexgen-x-icon.png') center/45% no-repeat,
+        linear-gradient(165deg, var(--flexgen-black), var(--flexgen-navy));
+    background-blend-mode: overlay;
 }
 
-.node-first .zt-content,
-.zingtree-node:first-of-type .zt-content {
+.zingtree-node:first-of-type .zt-content,
+.node-first .zt-content {
     backdrop-filter: blur(3px);
 }
 
-/* ---------- CARD / CONTENT BOX STYLING ---------- */
+/* ---------- CONTENT / CARD PANELS ---------- */
 .zt-content,
-.zt-text,
-.zingtree-panel,
-.panel-body {
+.panel-body,
+.zingtree-panel {
     background: var(--flexgen-card-bg) !important;
     border: 1px solid var(--flexgen-border) !important;
-    border-radius: 12px !important;
-    padding: 20px !important;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+    border-radius: 14px !important;
+    padding: 22px !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 22px rgba(0, 0, 0, 0.45);
+    color: var(--flexgen-text-light) !important;
 }
 
 /* ---------- HEADINGS ---------- */
-h1, h2, h3 {
-    font-family: 'Inter', sans-serif;
-    letter-spacing: 0.3px;
-    font-weight: 600;
-    color: #FFFFFF;
+h1, h2, h3, h4 {
+    font-family: 'Inter', sans-serif !important;
+    color: white !important;
+    margin-top: 4px;
+    margin-bottom: 12px;
 }
 
-h1 {
-    font-size: 1.9rem;
-}
-h2 {
-    font-size: 1.45rem;
-}
-h3 {
-    font-size: 1.2rem;
-}
+h1 { font-size: 1.9rem; font-weight: 700; }
+h2 { font-size: 1.45rem; font-weight: 600; }
+h3 { font-size: 1.2rem; font-weight: 600; }
+h4 { font-size: 1.05rem; font-weight: 500; color: var(--flexgen-text-muted) !important; }
 
 /* ---------- BUTTONS ---------- */
 button,
@@ -75,30 +76,29 @@ a.btn,
     border: none !important;
     padding: 10px 18px !important;
     font-weight: 600 !important;
-    transition: all 0.19s ease-in-out;
-    box-shadow: 0 0 12px rgba(14, 111, 255, 0.35);
+    letter-spacing: 0.3px;
+    transition: all 0.18s ease-in-out !important;
+    box-shadow: 0 0 14px rgba(14, 111, 255, 0.45);
 }
 
 button:hover,
 a.btn:hover,
 .zt-button:hover {
     transform: translateY(-1px);
-    box-shadow: 0 0 18px rgba(14, 111, 255, 0.55);
+    box-shadow: 0 0 20px rgba(14, 111, 255, 0.65);
 }
 
-button:active,
-a.btn:active,
-.zt-button:active {
+button:active {
     transform: scale(0.97);
 }
 
 /* ---------- LINKS ---------- */
 a {
-    color: var(--flexgen-blue);
+    color: var(--flexgen-blue) !important;
     text-decoration: underline;
 }
 a:hover {
-    color: var(--flexgen-green);
+    color: var(--flexgen-green) !important;
 }
 
 /* ---------- TABLES ---------- */
@@ -106,22 +106,23 @@ table {
     width: 100%;
     border-collapse: collapse !important;
     margin-bottom: 18px;
+    color: var(--flexgen-text-light);
 }
 
 table th {
-    background: rgba(255, 255, 255, 0.08);
-    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: white !important;
     padding: 10px;
     font-weight: 600;
 }
 
 table td {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.04) !important;
     padding: 10px;
-    border-bottom: 1px solid var(--flexgen-border);
+    border-bottom: 1px solid var(--flexgen-border) !important;
 }
 
-/* ---------- FORM FIELDS ---------- */
+/* ---------- FORMS ---------- */
 input, textarea, select {
     background: rgba(255, 255, 255, 0.1) !important;
     color: white !important;
@@ -132,15 +133,15 @@ input, textarea, select {
 
 /* ---------- NODE TITLES ---------- */
 .zt-title {
-    font-size: 1.65rem !important;
+    font-size: 1.7rem !important;
     font-weight: 700 !important;
     color: white !important;
     border-bottom: 1px solid var(--flexgen-border) !important;
-    padding-bottom: 8px !important;
+    padding-bottom: 10px !important;
     margin-bottom: 18px !important;
 }
 
-/* ---------- SCROLLBAR (DARK MODE) ---------- */
+/* ---------- DARK SCROLLBAR ---------- */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -149,5 +150,5 @@ input, textarea, select {
     border-radius: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.04);
 }
